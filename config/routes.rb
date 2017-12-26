@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 	delete'/logout', to:'sessions#destroy'
 
 	resources :users
-	resources :microposts, only: [:create, :destroy]
+
+	resources :microposts, only: [:create, :destroy, :show]
+	
+	get'/show', to: 'microposts#show'
+	
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

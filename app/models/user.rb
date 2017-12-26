@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}
   has_many :microposts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Returns the hash digest of the given string.
 
